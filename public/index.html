@@ -1749,9 +1749,69 @@
     </script>
 
     <script>
+        // const contactForm = document.getElementById('contact-form');
+        // const formMessage = document.getElementById('form-message');
+        // const submitBtn = document.getElementById('submit-btn');
+        
+        // contactForm.addEventListener('submit', async (e) => {
+        //     e.preventDefault();
+            
+        //     const formData = {
+        //         name: document.getElementById('name').value,
+        //         email: document.getElementById('email').value,
+        //         message: document.getElementById('message').value
+        //     };
+            
+        //     submitBtn.disabled = true;
+        //     submitBtn.textContent = 'Sending...';
+            
+        //     try {
+        //         const response = await fetch('http://localhost:5000/api/contact', {
+        //             method: 'POST',
+        //             headers: {
+        //                 'Content-Type': 'application/json',
+        //             },
+        //             body: JSON.stringify(formData)
+        //         });
+                
+        //         const data = await response.json();
+                
+        //         formMessage.style.display = 'block';
+        //         formMessage.textContent = data.message;
+                
+        //         if (data.success) {
+        //             formMessage.style.color = 'var(--accent-color)';
+        //             contactForm.reset();
+        //         } else {
+        //             formMessage.style.color = '#ff6b6b';
+        //         }
+        //     } catch (error) {
+        //         console.error('Error:', error);
+        //         formMessage.style.display = 'block';
+        //         formMessage.style.color = '#ff6b6b';
+        //         formMessage.textContent = 'Network error. Please try again.';
+        //     } finally {
+        //         submitBtn.disabled = false;
+        //         submitBtn.textContent = 'Send Message';
+                
+        //         setTimeout(() => {
+        //             formMessage.style.display = 'none';
+        //         }, 5000);
+        //     }
+        // });
+
+
+
+        // Contact form handling
         const contactForm = document.getElementById('contact-form');
         const formMessage = document.getElementById('form-message');
         const submitBtn = document.getElementById('submit-btn');
+        
+        // Get the current domain for API calls - handles both local and production
+        const API_BASE_URL = window.location.origin;
+        
+        // For debugging
+        console.log('API Base URL:', API_BASE_URL);
         
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -1762,11 +1822,14 @@
                 message: document.getElementById('message').value
             };
             
+            console.log('Sending form data:', formData);
+            
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
+            formMessage.style.display = 'none';
             
             try {
-                const response = await fetch('http://localhost:5000/api/contact', {
+                const response = await fetch(`${API_BASE_URL}/api/contact`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -1774,7 +1837,10 @@
                     body: JSON.stringify(formData)
                 });
                 
+                console.log('Response status:', response.status);
+                
                 const data = await response.json();
+                console.log('Response data:', data);
                 
                 formMessage.style.display = 'block';
                 formMessage.textContent = data.message;
@@ -1789,7 +1855,7 @@
                 console.error('Error:', error);
                 formMessage.style.display = 'block';
                 formMessage.style.color = '#ff6b6b';
-                formMessage.textContent = 'Network error. Please try again.';
+                formMessage.textContent = `Network error: ${error.message}. Please check console for details.`;
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Send Message';
@@ -1798,7 +1864,7 @@
                     formMessage.style.display = 'none';
                 }, 5000);
             }
-        });
+});
     </script>
 
 </body>
