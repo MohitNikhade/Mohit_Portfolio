@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohit | Creative Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pO1/5J6Ro73c+auqdbJ74Hy4C5kQf+G3OMHvD4ElRPhn2xkXASd+YVD5Xp2z8Xp1NDC7FuACR3Al1uFElIjZ4g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
+    
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-color: #ffffff;
+            --secondary-text: #888;
+            --card-bg: #111111;
+            --border-color: rgba(255, 255, 255, 0.15);
+            --accent-color: #ffeebb;
+            
+            --accent-font: 'Cinzel', serif;
+            --body-font: 'Inter', sans-serif;
+        }
+
+        .light-theme {
+            --bg-color: #f0f0f0;
+            --text-color: #1a1a1a;
+            --secondary-text: #666;
+            --card-bg: #ffffff;
+            --border-color: rgba(0, 0, 0, 0.15);
+            --accent-color: #8B4513;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--body-font);
+            overflow-x: hidden;
+            position: relative;
+            transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+            min-height: 100vh;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .aurora-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -2;
+            background-color: var(--bg-color); 
+            background-image: radial-gradient(circle at 30% 110%, rgba(255, 238, 176, 0.4) 0%, rgba(219, 162, 11, 0.2) 30%, transparent 60%);
+            filter: blur(50px) contrast(120%);
+            transition: background-color 0.5s ease-in-out;
+        }
+        
+        .light-theme .aurora-bg {
+             background-image: radial-gradient(circle at 70% -10%, rgba(139, 69, 19, 0.4) 0%, rgba(255, 140, 0, 0.2) 30%, transparent 60%);
+        }
+
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.09;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" /></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.1" /></svg>');
+            background-size: 150px 150px;
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 50px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            z-index: 10;
+            position: relative;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .nav-links a {
+            margin-right: 30px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        .nav-extras {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .profile-icon, .theme-toggle {
+            background: var(--text-color);
+            color: var(--bg-color);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .profile-icon svg, .theme-toggle svg {
+            width: 20px;
+        }
+
+        .circular-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .theme-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 24px;
+        }
+
+        header {
+            min-height: 100vh;
+            padding: 0 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            max-width: 1600px;
+            margin: 0 auto;
+            align-items: center;
+
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        .hero-title {
+            font-family: var(--accent-font);
+            font-size: clamp(8rem, 18vw, 15rem);
+            font-weight: 400;
+            text-align: center;
+            line-height: 0.9;
+            letter-spacing: -0.02em;
+            background: linear-gradient(180deg, var(--text-color) 40%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.1));
+            margin-bottom: 40px;
+            margin-top: 0;
+            transition: all 0.5s;
+            z-index: 2;
+            position: relative;
+
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroFadeIn 10s ease-out forwards;
+        }
+            
+        @keyframes heroFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100vh;
+            max-height: 100vh;
+            width: auto;
+            z-index: 1;
+            border-radius: 8px;
+            /* box-shadow: 0 10px 30px rgba(0,0,0,0.4); */
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroFadeIn 5s ease-out forwards;
+        }
+
+        .hero-content {
+            display: flex;
+            /* justify-content: space-between; */
+            align-items: flex-start;
+            width: 100%;
+            /* max-width: 1400px; */
+            margin: 0 auto;
+            flex-wrap: wrap;
+
+
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 100vw;
+            width: 100%;
+            position: relative;
+            z-index: 3;
+            gap: 20px;
+        }
+        
+        .hero-right {
+            width: 25%;
+            min-width: 250px;
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            flex-grow: 1;
+            padding-left: 20px;
+            z-index: 3;
+            max-width: 30vw;
+            position: relative;
+            margin-left: 150px;
+        }
+
+        .hero-left {
+            font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+            text-align: left;
+            padding: 0;
+            font-family: var(--body-font);
+            flex-direction: column;
+            display: flex;
+            align-items: flex-start;
+            flex-grow: 1; 
+            width: 70%;
+            z-index: 3;
+            max-width: 30vw;
+            position: relative;
+            margin-right: 150px;
+        }
+        
+        .cta-button {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+            padding: 12px 30px;
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            background: none;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .cta-button:hover {
+            background: var(--text-color);
+            color: var(--bg-color);
+            border-color: var(--text-color);
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+        }
+        
+        .arrow {
+            margin-left: 10px;
+            font-size: 1.2em;
+            transition: transform 0.3s;
+        }
+        
+        .cta-button:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        .typewriter-wrapper {
+            width: auto; 
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 0.1em solid var(--accent-color);
+            animation: blink-caret 0.75s step-end infinite;
+            padding-right: 5px;
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--accent-color) }
+        }
+
+
+        .badge-container {
+            position: absolute;
+            bottom: 50px;
+            right: 50px;
+        }
+        
+        .badge {
+            width: 120px;
+            height: 120px;
+            animation: spin 10s linear infinite;
+        }
+        
+        .badge text {
+            fill: var(--text-color);
+            opacity: 0.7;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .section {
+            padding: 100px 50px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .section-header h2 {
+            font-weight: 400;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+        }
+        
+        .line {
+            flex-grow: 1;
+            height: 1px;
+            background: var(--border-color);
+            margin: 0 20px;
+        }
+
+        /* Projects Section - Horizontal Scroll */
+        .horizontal-scroll-container {
+            display: flex;
+            overflow-x: scroll;
+            gap: 40px;
+            padding-bottom: 30px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 0 50px 30px 50px;
+            margin: 0 -50px;
+        }
+        
+        .horizontal-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .horizontal-scroll-container::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 4px;
+        }
+        .horizontal-scroll-container::-webkit-scrollbar-track {
+            background: var(--card-bg);
+        }
+        .horizontal-scroll-container {
+            -ms-overflow-style: none;
+            scrollbar-width: thin;
+        }
+
+        .project-card {
+            flex: 0 0 clamp(250px, 40vw, 400px);
+            scroll-snap-align: start;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .project-image {
+            height: clamp(200px, 25vw, 300px);
+            width: 100%;
+        }
+
+        .project-details {
+            padding: 20px;
+        }
+
+        .project-details h3 {
+            font-family: var(--accent-font);
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            margin-bottom: 5px;
+        }
+        
+        .project-details p {
+            color: var(--secondary-text);
+        }
+
+        .section {
+            padding: 60px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .line {
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            margin: 0 auto 15px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 300;
+        }
+        
+        .gallery {
+            /* display: grid; */
+            /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+            gap: 30px;
+
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+
+        /* New */
+        .gallery img {
+            pointer-events: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+
+        
+        /* New */
+        .gallery-track {
+            display: flex;
+            animation: scroll 25s linear infinite;
+            gap: 20px;
+        }
+
+        .gallery-track > * {
+            flex-shrink: 0;
+        }
+        
+        .card {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            height: 400px;
+            width: 300px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-image {
+            height: 400px;
+            width: 100%;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: transform 0.4s ease, filter 0.4s ease;
+            will-change: transform, filter;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        .card-image {
+            border-radius: 20px 20px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-info h3 {
+            font-family: var(--accent-font);
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+        
+        .card-info p {
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+
+        /* New */
+        
+        .card-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .card-info h3 {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .card-info p {
+            letter-spacing: 1px;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .gallery:hover .gallery-track {
+            animation-play-state: paused;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 280px;
+                height: 360px;
+            }
+            
+            @keyframes scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+        }
+
+        /* New */
+        .gradient-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .gradient-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .gradient-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .gradient-4 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .gradient-5 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .gradient-6 { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+
+        /* New */
+        .card-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .about-me-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        .about-me-text {
+            flex: 2;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .about-me-details {
+            flex: 1;
+            min-width: 250px;
+        }
+        .details-item h3 {
+            font-family: var(--accent-font);
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+        }
+        .details-item p {
+            color: var(--secondary-text);
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: flex-start;
+            gap: 80px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item h3 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-family: var(--accent-font);
+        }
+        
+        .stat-item p {
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        /* Connect Section */
+        #connect {
+            text-align: center;
+            padding: 150px 50px;
+        }
+        #connect h2 {
+            font-family: var(--accent-font);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 40px;
+        }
+        .email-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .email-form input, .email-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border-radius: 4px;
+            font-family: var(--body-font);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .email-form input:focus, .email-form textarea:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 5px rgba(255, 238, 176, 0.5);
+        }
+        .email-form button {
+            background: var(--text-color);
+            color: var(--bg-color);
+            border: none;
+            padding: 15px 40px;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .email-form button:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        footer {
+            padding: 50px 50px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .footer-content h2 {
+            font-family: var(--accent-font);
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-links a {
+            margin: 0 20px;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .copyright {
+            color: var(--secondary-text);
+            font-size: 0.8rem;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--text-color);
+            border-radius: 50%;
+            position: fixed;
+            z-index: 9999;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.1s;
+        }
+
+        .cursor-outline {
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--accent-color);
+            border-radius: 50%;
+            position: fixed;
+            z-index: 9998;
+            pointer-events: none;
+            transform: translate(-50%, -50%) translate3d(0, 0, 0); 
+            transition: width 0.3s ease, height 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .cursor-grow {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: transparent;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-right {
+                width: 35%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px 30px;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hero-title {
+                font-size: 20vw;
+            }
+            header {
+                padding: 0 30px;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-left, .hero-right {
+                width: 100%;
+                max-width: 90vw;
+                min-width: auto;
+                padding-left: 0;
+            }
+            .hero-left {
+                align-items: center;
+            }
+            .hero-right {
+                right: 50%;
+            }
+
+            .hero-image {
+                height: 300px; 
+                max-width: 90%;
+                width: auto;
+                max-height: none;
+                position: relative;
+            }
+            
+            .badge-container {
+                position: static;
+                margin-top: 50px;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .section {
+                padding: 80px 30px;
+            }
+            
+            .section-header {
+                margin-bottom: 40px;
+            }
+
+            .horizontal-scroll-container {
+                gap: 20px;
+                padding: 0 30px 30px 30px;
+                margin: 0 -30px;
+            }
+            .project-card {
+                flex: 0 0 85vw; /* Wider card on mobile */
+            }
+            
+            .about-me-section {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 40px;
+                align-items: flex-start;
+            }
+
+            #connect {
+                padding: 100px 30px;
+            }
+            
+            .footer-links a {
+                margin: 0 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .horizontal-scroll-container {
+                padding: 0 20px 30px 20px;
+                margin: 0 -20px;
+            }
+            .project-card {
+                flex: 0 0 90vw;
+            }
+        }
+    </style>
+  
+    <style>
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            padding: 0 2rem;
+        }
+        
+        .skill-category {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .skill-category h4 {
+            color: #00d4ff;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .skill-category li {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            padding: 0.25rem 0;
+        }
+        
+        .skill-category li::before {
+            content: "▸";
+            color: #00d4ff;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+                gap: 1.5rem;
+            }
+            
+            .about-me-section {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+    </style>
+
+    <style>
+        .project-description {
+            margin-top: 10px;
+        }
+        
+        .project-description details {
+            margin-top: 8px;
+        }
+        
+        .project-description summary {
+            cursor: pointer;
+            color: #007bff;
+            font-weight: 500;
+            user-select: none;
+        }
+        
+        .project-description summary:hover {
+            text-decoration: underline;
+        }
+        
+        .project-description p {
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin: 5px 0;
+        }
+        
+        .project-links {
+            margin-top: 12px;
+            display: flex;
+            gap: 12px;
+        }
+        
+        .project-links a {
+            background: rgba(255,255,255,0.2);
+            color: #666;
+            background-color: #999;
+            padding: 6px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85em;
+            transition: all 0.3s ease;
+        }
+        
+        .project-links a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-1px);
+        }
+        
+    </style>
+
+    <style>
+        .image-container 
+        {
+            width: auto;
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-top: auto;
+
+            pointer-events: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+            
+        .image-container img 
+        {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div class="aurora-bg"></div>
+    <div class="grain-overlay"></div>
+
+    <nav>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#aboutme">About Me</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#connect">Let's Connect</a>
+        </div>
+        <div class="nav-extras">
+            <div class="theme-toggle" id="theme-toggle">
+                <svg id="moon-icon" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg id="sun-icon" style="display: none;" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </div>
+
+            <a href="#" class="profile-icon">
+                <img src="C:\Users\nisha\Downloads\Portfolio_3\Mohit_logo.png" alt="Logo" class="circular-logo">
+            </a>
+
+        </div>
+    </nav>
+
+    <header id="home">
+        <h1 class="hero-title" style="z-index: -1;">MOHIT</h1>
+        
+        <div class="hero-image">
+            <img src="Mohit_Hoodie_2.png" alt="Mohit's Creative Profile Photo"> 
+        </div>
+        <div class="hero-content">
+            <div class="hero-left">
+                <div class="typewriter-wrapper">
+                    <p class="typewriter-text"></p>
+                </div>
+                <a href="#connect" class="cta-button">
+                    Let's Connect
+                    <span class="arrow">↗</span>
+                </a>
+            </div>
+
+            <div class="hero-right">
+                <p>Whether you're looking to launch a new idea or find the perfect expression for your vision, we empower imagination with intelligence.</p>
+            </div>
+        </div>
+
+        <div class="badge-container">
+            <div class="badge">
+                <svg viewBox="0 0 100 100" width="100" height="100">
+                    <defs>
+                        <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+                    </defs>
+                    <text font-size="12">
+                        <textPath xlink:href="#circle">
+                            CREATIVE DIRECTOR • AI DEVELOPER •  
+                        </textPath>
+                    </text>
+                </svg>
+                <div class="badge-center"></div>
+            </div>
+        </div>
+    </header>
+
+    <section id="aboutme" class="section">
+        <div class="section-header">
+            <h2>About Me</h2>
+            <span class="line"></span>
+            <p>MY STORY</p>
+        </div>
+        
+        <div class="about-me-section">
+            <div class="about-me-text">
+                <p>I am a **Creative Director** and **Visual Designer** based in New York, focused on visual storytelling and blending modern aesthetics with timeless elegance. My passion lies in crafting compelling brand narratives and delivering stunning visual experiences across digital and print media.</p>
+                <p style="margin-top: 20px;">Over the last five years, I've had the privilege of collaborating with high-profile clients in the fashion and tech industries, bringing a strategic and artful approach to every project, from concept to final execution.</p>
+            </div>
+            <div class="about-me-details">
+                <div class="details-item">
+                    <h3>Philosophy</h3>
+                    <p>Elegance in simplicity. Impact through vision.</p>
+                </div>
+                <div class="details-item">
+                    <h3>Focus</h3>
+                    <p>Art Direction, Brand Strategy, UI/UX, Photography.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <h3>2+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>20+</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stat-item">
+                <h3>6</h3>
+                <p>Awards Won</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="section-header">
+            <h2>Skills & Expertise</h2>
+            <span class="line"></span>
+            <p>CORE COMPETENCIES</p>
+        </div>
+        
+        <div class="about-me-section">
+            <div class="about-me-text">
+                <h3 style="font-size: 2rem; font-weight: bold;">Technical Skills</h3>
+                <p style="font-size: 1rem; color: #888;">AI & Gen AI (LangChain, LangSmith, LangGraph, LlamaIndex, Haystack, AutoGen), AI Agents (n8n, Crew AI, Cassidy, Flowise AI, Make, Lindy, Lamini), RAG Systems (Weaviate, Pinecone, Supabase, OpenSearch, Elastic, MongoDB, Neo4j), Machine Learning (TensorFlow, PyTorch, Keras, Scikit-learn), Deep Learning & Transformers, Data Science (Python, Matplotlib), Web Development (HTML/CSS/JS, React). Technology-agnostic approach focusing on optimal tools for AI solutions.</p>
+            </div>
+            <div class="about-me-details">
+                <h3 style="font-size: 2rem; font-weight: bold;">Soft Skills</h3>
+                <p style="font-size: 1rem; color: #888;">AI Strategy & Leadership, Complex System Architecture, Client AI Consulting, Multi-Agent System Design, Technical Communication, Rapid Prototyping, Ethical AI Implementation.</p>
+            </div>
+        </div>
+    
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>AI Frameworks</h4>
+                <ul>
+                    <li>LangChain • LangGraph • LlamaIndex</li>
+                    <li>Haystack • AutoGen • Crew AI</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Vector & Knowledge DBs</h4>
+                <ul>
+                    <li>Weaviate • Pinecone • Neo4j</li>
+                    <li>Supabase • OpenSearch • MongoDB</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>ML/DL Stack</h4>
+                <ul>
+                    <li>TensorFlow • PyTorch • Keras</li>
+                    <li>Scikit-learn • Transformers</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Agent Platforms</h4>
+                <ul>
+                    <li>n8n • Flowise AI • Make</li>
+                    <li>Cassidy • Lindy • Lamini</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <div class="section-header">
+            <h2>Experience</h2>
+            <span class="line"></span>
+            <p>CAREER HIGHLIGHTS</p>
+        </div>
+        
+        <div class="about-me-section" style="flex-direction: column;">
+            <div class="details-item">
+            
+                <h3>Python Developer, Invezza Technologies Pvt Ltd.</h3>
+                <p style="font-family: Allura; font-size: 20px; font-weight: bold;">Feb 2025 - Aug 2025</p>
+            
+                <p>
+                    <p style="text-decoration: underline; font-weight: bold;">1. AI-Powered Marathon Racing Analytics System</p>
+                    <p>At Invezza Technologies, I spearheaded the development of a real-time, computer vision-based system to automate the timing and ranking of participants in large-scale marathon events. The solution was designed to replace manual, error-prone processes with a highly accurate, scalable and automated pipeline.</p>
+            
+                    <br><br>
+                    <div style="color: #888;">
+                        <strong>Business Value Delivered</strong><br>
+                        • Eliminated Manual Effort: Reduced race result calculation time from hours to seconds, freeing up event staff for other critical tasks<br>
+                        • Enhanced Accuracy & Fairness: Minimized human error in bib reading and timing, ensuring results were accurate and disputes were drastically reduced<br>
+                        • Improved Participant Experience: Enabled the possibility of near-instant result publication and certificate generation, significantly boosting runner satisfaction<br>
+                        • Scalability: The automated system could easily scale from small local races to large city marathons with thousands of participants without a linear increase in cost or manpower<br>
+                    </div>
+                    
+            
+                    <span id="more-text" style="display:none; color: #888;">
+            
+                        <br>
+                        Developed bib number recognition and ranking system for marathons using YOLOv8 and Roboflow, overcoming overlapping and tracking challenges.
+                        <br><br>
+            
+                        <strong>Roles and responsibilities</strong><br>
+                        As the Lead Developer for this project, I was responsible for the end-to-end implementation, from model selection and data pipeline creation to algorithm development for finish-line logic and ranking.
+                        <br><br>
+            
+                        <strong>Technical Implementation & Challenges Overcome:</strong><br>
+            
+                        <em><li>Bib Number Detection & Recognition:</li></em><br>
+                        <li>Model & Framework: Leveraged a fine-tuned YOLOv8 model, trained and deployed using Roboflow, for high-accuracy bib detection and OCR in diverse conditions (varying lighting, angles, and distances).</li>
+                        <li>Challenge: Bib Occlusion & Overlapping Runners.</li>
+                        <li>Solution: Implemented a tracking-by-detection pipeline using centroid + appearance features to maintain unique runner IDs.</li>
+                        <br><br>
+            
+                        <em><li>Finish Line Logic & Ranking Algorithm:</li></em><br>
+                        <li>Solution: Designed logic where a runner “finishes” the moment their torso centroid crosses a vertical finish line.</li>
+                        <li>Challenge: Tie Breaking.</li>
+                        <li>Solution: Sorted first by timestamp (ms), then by unique tracking ID.</li>
+                        <br><br>
+            
+                        <em>End-to-End Pipeline:</em><br>
+                        The system ingested a live video feed, performed real-time inference, tracked runners, recorded timestamps, and produced a live leaderboard.
+                        <br><br>
+            
+                        <p> </p>
+                        <p> </p>
+                        <p style="text-decoration: underline; font-weight: bold;">2. Apache Log Intelligence & Error Resolution System</p>
+                        <p>I developed an intelligent log analysis application to proactively monitor, diagnose, and resolve issues within Invezza's web infrastructure. This tool transformed raw, chaotic Apache log files into structured operational intelligence.</p>
+            
+                        <br><br>
+                        <strong>Business Value Delivered</strong><br>
+                        • Reduced MTTR from hours to minutes<br>
+                        • Improved System Reliability through proactive error detection<br>
+                        • Enhanced User Experience via quick error resolution<br>
+                        • Data-Driven Insights for traffic, security, and API usage<br>
+            
+                        <br>
+                        Developed bib number recognition and ranking system for marathons using YOLOv8 and Roboflow, overcoming overlapping and tracking challenges.
+                        <br><br>
+            
+                        <strong>Roles and responsibilities</strong><br>
+                        I designed and built the application from the ground up, focusing on log parsing, pattern recognition, error analysis and generating actionable insights.
+                        <br><br>
+            
+                        <strong>Technical Implementation & Challenges Overcome:</strong><br>
+            
+                        <em><li>Intelligent Log Parsing & Analysis:</li></em><br>
+                        <li>Challenge: Unstructured Data.</li>
+                        <li>Solution: Built a robust parser using Regex and Python to extract structured fields (IP, Timestamp, Status Code, URI, User-Agent, Error Message).</li>
+                        <br><br>
+            
+                        <em><li>Error Identification & Root Cause Analysis:</li></em><br>
+                        <li>System categorized logs by status codes (4xx, 5xx).</li>
+                        <li>Used frequency analysis to identify recurring issues.</li>
+                        <br><br>
+            
+                        <strong>Optimized Error Handling & Resolution:</strong><br>
+                        <em><li>Challenge: Reactive vs. Proactive Monitoring.</li></em><br>
+                        <br><br>
+            
+                        <em><li>Solution included:</li></em><br>
+                        <ol>Actionable Alerts with exact root context</ol>
+                        <ol>Traffic & Performance Insights</ol>
+                        <ol>Security Monitoring for suspicious access patterns</ol>
+                        <br><br>
+            
+                    </span>
+            
+                </p>
+            
+                <button id="toggle-more" type="button" style="
+                    background-color: rgba(255, 255, 255, 0.3); 
+                    backdrop-filter: blur(10px);
+                    color: #888;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 25px;
+                    font-size: 10px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    transition: all 0.3s ease;
+                    width: auto;
+                    height: auto;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;">
+                    Read More
+                </button>
+            
+            </div>
+
+
+
+            <div class="details-item">
+                <h3>AI-driven CRM workflow for WhatsApp and E-mail</h3>
+                <p style="font-family: Allura; font-size: 20px; font-weight: bold;">Aug 2025 - Nov 2025</p>
+                
+                <p>
+                    At Inorbvict Healthcare, a medical equipment and devices provider, the goal was to modernize how inbound leads are handled across WhatsApp, email and the internal CRM so that every inquiry passes through a consistent, intelligent sales funnel.
+                    <br><br>
+                    <strong>Business Value Delivered</strong><br>
+                    • Annual cost savings: $13,500 in reduced manual labor<br>
+                    • Revenue impact: 28% increase in qualified lead conversion<br>
+                    • Scalability: Handles 500% more leads without additional staff<br>
+                    • Customer satisfaction: 4.8/5 rating on response quality and speed<br>
+                    • Team efficiency: Sales reps focus 80% more on closing vs. admin tasks<br>
+                    
+                    <span id="more-text" style="display:none;">
+                        <br>
+                        The solution was an AI-first CRM assistant that engages leads instantly, validates information, scores intent and guides sales toward closure.
+                        <br><br>
+                        <strong>Problem and goals</strong><br>
+                        Leads were coming from multiple platforms with inconsistent data quality and manual follow-ups.<br>
+                        Sales stages (inquiry, pricing, quotation, PI, closure) were not standardized or tracked intelligently.<br>
+                        The company needed faster response time, better qualification and higher conversion with minimal manual effort.<br>
+                        The objective: automate initial conversations, ensure data completeness and authenticity and give sales a “copilot” that recommends next-best-actions.
+                        <br><br>
+                        <strong>Technical solution</strong><br>
+                        <em>Channels and integration</em><br>
+                        Integrated Twilio WhatsApp Business API to automatically initiate conversations as soon as a new lead is created in the CRM.<br>
+                        Implemented an email integration layer to send auto-generated, personalized follow-up emails when WhatsApp engagement was low or when only an email was available.
+                        <br><br>
+                        <em>Agentic AI architecture</em><br>
+                        Built a multi-agent system mapped to five key stages: Inquiry Received, Price Shared, Quotation Sharing, Proforma Invoice and Victory (closure).<br>
+                        Used RAG (Retrieval-Augmented Generation) so each agent could answer product questions (brand, model, configurations, purchase plans, consignee details) from internal knowledge bases while keeping responses accurate and contextual.<br>
+                        Implemented agents for data capture and validation, product information verification and follow-up automation when users go inactive on WhatsApp or email.
+                        <br><br>
+                        <em>Intelligence and analytics</em><br>
+                        Computed sentiment scores and “genuineness” signals to prioritize leads and adapt tone.<br>
+                        Added negotiation-aware logic to recommend when to share prices, send quotations or push for proforma invoice.
+                        <br><br>
+                        <strong>Chanakya analytics tab</strong><br>
+                        Aggregates customer sentiment and genuineness scores, likely intent/objections and recommended next steps so sales gets a decision-support layer from conversational data.
+                        <br><br>
+                        <strong>Sarthi guidance tab</strong><br>
+                        Acts as a sales assistant that summarizes the current state of each lead, proposes the best next action and uses the agentic layer to simulate outcomes and choose a low-friction step forward.
+                    </span>
+                </p>
+
+                <button id="toggle-more" type="button" style="
+                        background-color: rgba(255, 255, 255, 0.3); 
+                        backdrop-filter: blur(10px);
+                        color: #888;
+                        padding: 10px 20px;
+                        border: none;
+                        border-radius: 25px;
+                        font-size: 10px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        transition: all 0.3s ease;
+                        width: auto;
+                        height: auto;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                        ">
+                    Read More
+                </button>   
+            </div>
+        </div>
+    </section>
+  
+    <section id="projects">
+        <div class="section-header" style="max-width: 1600px; margin: 0 auto 60px; padding: 0 50px;">
+            <h2>Featured Projects</h2>
+            <span class="line"></span>
+            <p>CASE STUDIES</p>
+        </div>
+        
+        <div class="horizontal-scroll-container">    
+            <div class="project-card" style="background-color: transparent;">
+                <div class="image-container">
+                <img src="C:\Users\nisha\Downloads\Portfolio_3\img_vid_upscale.png" alt="Hogwarts">
+                </div>
+                <div class="project-details">
+                    <h3>Image and Video Upscaling</h3>
+                    <p>AI Media Enhancement, 2025</p>
+                    <div class="project-description">
+                        <p>Advanced AI-powered solution that transforms low-resolution images and videos into stunning 4K+ quality using cutting-edge super-resolution algorithms and GAN-based upscaling technology. Supports batch processing, real-time preview, and multiple formats including HEVC, AV1, and ProRes.</p>
+                        <details>
+                            <summary>Read More</summary>
+                            <p>The system leverages state-of-the-art diffusion models and temporal consistency algorithms to ensure smooth video upscaling without artifacts. Features include noise reduction, frame interpolation for higher FPS, color enhancement using learned color spaces, and API integration for developers. Perfect for content creators, archival restoration, and professional video production workflows. Deployed as both web app and CLI tool with Docker support.</p>
+                        </details>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">GitHub</a>
+                        <a href="#" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="project-card" style="background-color: transparent;">
+                <div class="image-container">
+                <img src="C:\Users\nisha\Downloads\Portfolio_3\face_swapper.png" alt="Hogwarts">
+                </div>
+                <div class="project-details">
+                    <h3>CaraCambio</h3>
+                    <p>Face Swapping Application, 2025</p>
+                    <div class="project-description">
+                        <p>Real-time face swapping web application powered by deep learning models that delivers seamless, high-fidelity face transfers across photos, videos, and live streams with privacy-first local processing capabilities.</p>
+                        <details>
+                            <summary>Read More</summary>
+                            <p>Built with MediaPipe for face detection, InsightFace for swapping, and ONNX Runtime for cross-platform inference. Features include multi-face support, pose/angle preservation, expression transfer, age/gender adaptation, and celebrity face library. Includes watermark removal, background segmentation, and export to GIF/MP4. Runs entirely in browser with WebGPU acceleration for 60fps performance.</p>
+                        </details>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">GitHub</a>
+                        <a href="#" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="project-card" style="background-color: transparent;">
+                <!-- <img src="C:\Users\nisha\Downloads\Portfolio_3\Hogwarts.jpg"> -->
+                <div class="image-container">
+                <img src="C:\Users\nisha\Downloads\Portfolio_3\chatbot.png" alt="Hogwarts">
+                </div>
+                <div class="project-details">
+                    <h3>Xendo</h3>
+                    <p>Customer Service Chatbot, 2025</p>
+                    <div class="project-description">
+                        <p>Intelligent customer service chatbot that handles 85% of common inquiries autonomously using RAG architecture, multi-turn conversation memory, and integration with 20+ business tools and CRMs.</p>
+                        <details>
+                            <summary>Read More</summary>
+                            <p>Combines Llama 3.1 with vector database for instant knowledge retrieval, sentiment analysis for escalation routing, and dynamic workflow automation. Supports 12 languages, voice input/output, ticket generation, and analytics dashboard. Deployed on enterprise infrastructure with SOC2 compliance, 99.9% uptime SLA, and seamless handover to human agents. Reduced support costs by 67% for beta customers.</p>
+                        </details>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">GitHub</a>
+                        <a href="#" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="project-card" style="background-color: transparent;">
+                <div class="image-container">
+                <img src="C:\Users\nisha\Downloads\Portfolio_3\chat_summarizer.png" alt="Hogwarts">
+                </div>
+                <div class="project-details">
+                    <h3>SummaVibe</h3>
+                    <p>Chat Summarizer Tool, 2025</p>
+                    <div class="project-description">
+                        <p>AI-powered chat summarizer that condenses hours of conversations into actionable insights, key decisions, and follow-up tasks across Slack, Discord, WhatsApp, and email threads.</p>
+                        <details>
+                            <summary>Read More</summary>
+                            <p>Uses hierarchical summarization with abstractive and extractive techniques to capture context, identify action items, detect decisions, and highlight risks/opportunities. Features timeline visualization, speaker attribution, sentiment trends, and one-click export to Notion, Google Docs, or Jira. Browser extension processes 100k+ token conversations in under 10 seconds with 92% accuracy on benchmark datasets.</p>
+                        </details>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">GitHub</a>
+                        <a href="#" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section">
+        <div class="section-header">
+            <h2>Gallery</h2>
+            <span class="line"></span>
+            <p>VISUAL ARCHIVE</p>
+        </div>
+        
+        <div class="gallery">
+            <div class="gallery-track">
+                <div class="card">
+                    <div>
+                        <img src="Agentic_AI_Google_Hackathon.png" style="height: 275px; width: auto; object-fit: cover;">
+                    </div>
+                    <div class="card-info">
+                        <h3>Google Agentic AI Hackathon</h3>
+                        <p>Bangalore, India</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <img src="DPBH_Gen_AI_Hackathon.png" style="height: 275px; width: auto; object-fit: cover;">
+                    </div>
+                    <div class="card-info">
+                        <h3>DPBH Gen AI Hackathon</h3>
+                        <p>Varanasi, India</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <img src="AI_Developer_Camp.jpg" style="height: 275px; width: auto; object-fit: cover;">
+                    </div>
+                    <div class="card-info">
+                        <h3>Copilot Developer Camp</h3>
+                        <p>Pune, India</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <img src="AWS_Bedrock.png" style="height: 275px; width: 100%; object-fit: cover;" alt="AWS Bedrock">
+                    </div>
+                    <div class="card-info">
+                        <h3>AWS Bedrock</h3>
+                        <p>Pune, India</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <img src="GenAI.jpg" style="height: 275px; width: 100%; object-fit: cover;" alt="Azure Tech Community">
+                    </div>
+                    <div class="card-info">
+                        <h3>Gen AI Hackathon</h3>
+                        <p>Pune, India</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <img src="DevOps.jpg" style="height: 275px; width: 100%; object-fit: cover;" alt="DataOps">
+                    </div>
+                    <div class="card-info">
+                        <h3>DataOps</h3>
+                        <p>Pune, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="connect">
+        <h2>Ready to create magic together?</h2>
+        <div class="email-form">
+            <form id="contact-form">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                <button type="submit" id="submit-btn">Send Message</button>
+            </form>
+            <div id="form-message" style="margin-top: 20px; display: none;"></div>
+        </div>
+    </section>
+
+    <footer id="contactme">
+        <div class="footer-content">
+            <a href="mailto:mohitnikhade14@gmail.com" class="email-link">mohitnikhade14@gmail.com</a>
+            
+            <div class="footer-links">
+                <!-- <a href="https://www.instagram.com/mohit_nikhade_14">Instagram</a>
+                <a href="https://www.linkedin.com/in/mohit-nikhade">LinkedIn</a>
+                <a href="https://www.x.com/Mohit_Nikhade7">Twitter</a>
+                <a href="https://stackoverflow.com/users/27154899/mohit-nikhade/">Stackoverflow</a>
+                <a href="https://www.discord.com/Mohit_niks/">Discord</a> -->
+
+                <a href="https://www.instagram.com/mohit_nikhade_14" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/mohit-nikhade" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+                </a>
+                
+                <a href="https://www.x.com/Mohit_Nikhade7" target="_blank" aria-label="Twitter X">
+                <i class="fab fa-twitter"></i>
+                </a>
+                
+                <a href="https://stackoverflow.com/users/27154899/mohit-nikhade/" target="_blank" aria-label="Stack Overflow">
+                <i class="fab fa-stack-overflow"></i>
+                </a>
+                
+                <a href="https://www.discord.com/Mohit_niks/" target="_blank" aria-label="Discord">
+                <i class="fab fa-discord"></i>
+                </a>
+
+                <a href="https://github.com/MohitNikhade/" target="_blank" aria-label="Github">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <p class="copyright">© 2025 Mohit Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Theme Toggle Script ---
+        const toggleButton = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const body = document.body;
+
+        const updateThemeIcons = (isLightTheme) => {
+            sunIcon.style.display = isLightTheme ? 'block' : 'none';
+            moonIcon.style.display = isLightTheme ? 'none' : 'block';
+        };
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            const isLightTheme = body.classList.contains('light-theme');
+            updateThemeIcons(isLightTheme);
+            localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.add('light-theme');
+        }
+        updateThemeIcons(body.classList.contains('light-theme'));
+
+
+        // --- Custom Cursor Script (Optimized) ---
+        const cursorOutline = document.querySelector('.cursor-outline');
+        const cursorDot = document.querySelector('.cursor-dot');
+        const interactiveElements = document.querySelectorAll('a, button, .theme-toggle, .profile-icon, .card, .project-card');
+
+        let mouseX = 0, mouseY = 0;
+        let outlineX = 0, outlineY = 0;
+        const speed = 0.15; // Lower number means smoother/slower follow
+
+        // Update target position
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            // Immediate position for the small dot
+            cursorDot.style.left = `${mouseX}px`;
+            cursorDot.style.top = `${mouseY}px`;
+        });
+        
+        // Animation loop for smooth follow
+        const animateCursor = () => {
+            let distX = mouseX - outlineX;
+            let distY = mouseY - outlineY;
+            
+            outlineX = outlineX + (distX * speed);
+            outlineY = outlineY + (distY * speed);
+
+            // Use translate3d for hardware acceleration
+            cursorOutline.style.transform = `translate(-50%, -50%) translate3d(${outlineX}px, ${outlineY}px, 0)`;
+
+            requestAnimationFrame(animateCursor);
+        }
+        requestAnimationFrame(animateCursor);
+
+
+        // Cursor grow effect
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorOutline.classList.add('cursor-grow');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorOutline.classList.remove('cursor-grow');
+            });
+        });
+
+
+        // --- Typewriter Script ---
+        const texts = [
+            "AI & Gen AI Developer",
+            "Machine Learning",
+            "Data Scientist"
+        ];
+        
+        let currentTextIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        const typeSpeed = 100;
+        const backspaceSpeed = 50;
+        const pauseDuration = 1500;
+        
+        const typewriterElement = document.querySelector('.typewriter-text');
+        
+        function type() {
+            const currentText = texts[currentTextIndex];
+            
+            if (!isDeleting) {
+                // Typing
+                typewriterElement.textContent = currentText.slice(0, currentCharIndex + 1);
+                currentCharIndex++;
+                if (currentCharIndex === currentText.length) {
+                    isDeleting = true;
+                    setTimeout(type, pauseDuration);
+                    return;
+                }
+                setTimeout(type, typeSpeed);
+            } else {
+                // Deleting
+                typewriterElement.textContent = currentText.slice(0, currentCharIndex - 1);
+                currentCharIndex--;
+                if (currentCharIndex === 0) {
+                    isDeleting = false;
+                    currentTextIndex = (currentTextIndex + 1) % texts.length;
+                    setTimeout(type, pauseDuration);
+                    return;
+                }
+                setTimeout(type, backspaceSpeed);
+            }
+        }
+        
+        type();
+
+
+        const moreText = document.getElementById('more-text');
+        const toggleBtn = document.getElementById('toggle-more');
+
+        toggleBtn.addEventListener('click', () => {
+            const isHidden = moreText.style.display === 'none';
+            moreText.style.display = isHidden ? 'inline' : 'none';
+            toggleBtn.textContent = isHidden ? 'Read less' : 'Read more';
+        });
+
+    </script>
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+        if (event.key === 'F12' || 
+            (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J')) ||
+            (event.ctrlKey && event.key === 'U')) {
+            event.preventDefault();
+            alert('This function is disabled.');
+        }
+        });
+        document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+        alert('Right-click is disabled.');
+        });
+    </script>
+
+    <script>
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+        const submitBtn = document.getElementById('submit-btn');
+        
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            try {
+                const response = await fetch('http://localhost:5000/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const data = await response.json();
+                
+                formMessage.style.display = 'block';
+                formMessage.textContent = data.message;
+                
+                if (data.success) {
+                    formMessage.style.color = 'var(--accent-color)';
+                    contactForm.reset();
+                } else {
+                    formMessage.style.color = '#ff6b6b';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                formMessage.style.display = 'block';
+                formMessage.style.color = '#ff6b6b';
+                formMessage.textContent = 'Network error. Please try again.';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            }
+        });
+    </script>
+
+</body>
+</html>
