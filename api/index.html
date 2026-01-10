@@ -1927,6 +1927,34 @@
             }
         });
     </script>
+    <script>
+        // Experience section toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // First experience toggle
+    const toggleExp1 = document.querySelector('.toggle-exp-1');
+    const moreTextExp1 = document.querySelector('.more-text-exp-1');
+    
+    if (toggleExp1 && moreTextExp1) {
+        toggleExp1.addEventListener('click', () => {
+            const isHidden = moreTextExp1.style.display === 'none';
+            moreTextExp1.style.display = isHidden ? 'block' : 'none';
+            toggleExp1.textContent = isHidden ? 'Read less' : 'Read more';
+        });
+    }
+    
+    // Second experience toggle
+    const toggleExp2 = document.querySelector('.toggle-exp-2');
+    const moreTextExp2 = document.querySelector('.more-text-exp-2');
+    
+    if (toggleExp2 && moreTextExp2) {
+        toggleExp2.addEventListener('click', () => {
+            const isHidden = moreTextExp2.style.display === 'none';
+            moreTextExp2.style.display = isHidden ? 'block' : 'none';
+            toggleExp2.textContent = isHidden ? 'Read less' : 'Read more';
+        });
+    }
+});
+    </script>
 
 </body>
 </html>
