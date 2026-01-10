@@ -1267,168 +1267,232 @@
         <div id="sphere-container" aria-label="Interactive sphere of AI and Gen AI skills"></div>
     </section> -->
 
-    <section id="experience" class="section">
-        <div class="section-header">
-            <h2>Experience</h2>
-            <span class="line"></span>
-            <p>CAREER HIGHLIGHTS</p>
-        </div>
-        
-        <div class="about-me-section" style="flex-direction: column;">
-            <div class="details-item">
-            
-                <h3>Python Developer, Invezza Technologies Pvt Ltd.</h3>
-                <p style="font-family: Allura; font-size: 20px; font-weight: bold;">Feb 2025 - Aug 2025</p>
-            
-                <p>
-                    <p style="text-decoration: underline; font-weight: bold;">1. AI-Powered Marathon Racing Analytics System</p>
-                    <p>At Invezza Technologies, I spearheaded the development of a real-time, computer vision-based system to automate the timing and ranking of participants in large-scale marathon events. The solution was designed to replace manual, error-prone processes with a highly accurate, scalable and automated pipeline.</p>
-            
-                    <br><br>
-                    <div style="color: #888;">
-                        <strong>Business Value Delivered</strong><br>
-                        • Eliminated Manual Effort: Reduced race result calculation time from hours to seconds, freeing up event staff for other critical tasks<br>
-                        • Enhanced Accuracy & Fairness: Minimized human error in bib reading and timing, ensuring results were accurate and disputes were drastically reduced<br>
-                        • Improved Participant Experience: Enabled the possibility of near-instant result publication and certificate generation, significantly boosting runner satisfaction<br>
-                        • Scalability: The automated system could easily scale from small local races to large city marathons with thousands of participants without a linear increase in cost or manpower<br>
-                    </div>
-                    
-            
-                    <span id="more-text" style="display:none; color: #888;">
-            
-                        <br>
-                        Developed bib number recognition and ranking system for marathons using YOLOv8 and Roboflow, overcoming overlapping and tracking challenges.
-                        <br><br>
-            
-                        <strong>Roles and responsibilities</strong><br>
-                        As the Lead Developer for this project, I was responsible for the end-to-end implementation, from model selection and data pipeline creation to algorithm development for finish-line logic and ranking.
-                        <br><br>
-            
-                        <strong>Technical Implementation & Challenges Overcome:</strong><br>
-            
-                        <em><li>Bib Number Detection & Recognition:</li></em><br>
-                        <li>Model & Framework: Leveraged a fine-tuned YOLOv8 model, trained and deployed using Roboflow, for high-accuracy bib detection and OCR in diverse conditions (varying lighting, angles, and distances).</li>
-                        <li>Challenge: Bib Occlusion & Overlapping Runners.</li>
-                        <li>Solution: Implemented a tracking-by-detection pipeline using centroid + appearance features to maintain unique runner IDs.</li>
-                        <br><br>
-            
-                        <em><li>Finish Line Logic & Ranking Algorithm:</li></em><br>
-                        <li>Solution: Designed logic where a runner “finishes” the moment their torso centroid crosses a vertical finish line.</li>
-                        <li>Challenge: Tie Breaking.</li>
-                        <li>Solution: Sorted first by timestamp (ms), then by unique tracking ID.</li>
-                        <br><br>
-            
-                        <em>End-to-End Pipeline:</em><br>
-                        The system ingested a live video feed, performed real-time inference, tracked runners, recorded timestamps, and produced a live leaderboard.
-                        <br><br>
-            
-                        <p> </p>
-                        <p> </p>
-                        <p style="text-decoration: underline; font-weight: bold;">2. Apache Log Intelligence & Error Resolution System</p>
-                        <p>I developed an intelligent log analysis application to proactively monitor, diagnose, and resolve issues within Invezza's web infrastructure. This tool transformed raw, chaotic Apache log files into structured operational intelligence.</p>
-            
-                        <br><br>
-                        <strong>Business Value Delivered</strong><br>
-                        • Reduced MTTR from hours to minutes<br>
-                        • Improved System Reliability through proactive error detection<br>
-                        • Enhanced User Experience via quick error resolution<br>
-                        • Data-Driven Insights for traffic, security, and API usage<br>
-            
-                        <br>
-                        Developed bib number recognition and ranking system for marathons using YOLOv8 and Roboflow, overcoming overlapping and tracking challenges.
-                        <br><br>
-            
-                        <strong>Roles and responsibilities</strong><br>
-                        I designed and built the application from the ground up, focusing on log parsing, pattern recognition, error analysis and generating actionable insights.
-                        <br><br>
-            
-                        <strong>Technical Implementation & Challenges Overcome:</strong><br>
-            
-                        <em><li>Intelligent Log Parsing & Analysis:</li></em><br>
-                        <li>Challenge: Unstructured Data.</li>
-                        <li>Solution: Built a robust parser using Regex and Python to extract structured fields (IP, Timestamp, Status Code, URI, User-Agent, Error Message).</li>
-                        <br><br>
-            
-                        <em><li>Error Identification & Root Cause Analysis:</li></em><br>
-                        <li>System categorized logs by status codes (4xx, 5xx).</li>
-                        <li>Used frequency analysis to identify recurring issues.</li>
-                        <br><br>
-            
-                        <strong>Optimized Error Handling & Resolution:</strong><br>
-                        <em><li>Challenge: Reactive vs. Proactive Monitoring.</li></em><br>
-                        <br><br>
-            
-                        <em><li>Solution included:</li></em><br>
-                        <ol>Actionable Alerts with exact root context</ol>
-                        <ol>Traffic & Performance Insights</ol>
-                        <ol>Security Monitoring for suspicious access patterns</ol>
-                        <br><br>
-
-                        <p></p>
-                        <p></p>
-
-
-<p style="text-decoration: underline; font-weight: bold; font-size: 28px; margin-bottom: 20px;">
-    Credit Risk Intelligence & Prediction System
-</p>
-
-<p style="font-size: 18px; color: #2c3e50; margin-bottom: 30px;">
-    I developed an end-to-end credit risk assessment platform for Lauki Finance, transforming raw borrower data into actionable intelligence for default prediction, credit scoring, and risk rating. This ML-powered tool delivers real-time insights via a Streamlit interface, enabling precise lending decisions.
-</p>
-
-<div class="business-value">
-    <strong style="font-size: 20px;">Business Value Delivered</strong><br><br>
-    • <strong>Reduced default rates</strong> through proactive risk identification<br>
-    • <strong>Improved Lending Accuracy</strong> with 98% AUC predictions<br>
-    • <strong>Enhanced Regulatory Compliance</strong> via interpretable SHAP insights<br>
-    • <strong>Data-Driven Decisions</strong> on borrower profiles, loan approvals, and portfolio management
-</div>
-
-<p style="font-size: 16px; margin: 20px 0;">
-    <strong>Developed with XGBoost, Optuna tuning, and Streamlit deployment</strong> for scalable, interactive use. 
-    <a href="https://credit-risk-modeling-lauki-finance.streamlit.app/" target="_blank">Live Demo</a> | 
-    <a href="https://github.com/nafiul-araf/Credit-Risk-Modeling-End-to-End-Project" target="_blank">GitHub</a>
-</p>
-
-<br>
-
-<strong style="font-size: 18px;">Roles and Responsibilities</strong><br>
-<p style="margin: 15px 0;">
-    I designed and built the full pipeline from data ingestion to deployment, focusing on feature engineering, model optimization, interpretability, and production-ready Streamlit app.
-</p>
-
-<br>
-
-<strong style="font-size: 20px; color: #2c3e50;">Technical Implementation & Challenges Overcome:</strong>
-
-<div class="challenge-solution">
-    <em><li style="font-size: 18px;">Intelligent Data Processing & Feature Engineering:</li></em><br>
-    <li><strong>Challenge:</strong> Imbalanced dataset (10% defaults) with unstructured features.</li>
-    <li><strong>Solution:</strong> Applied domain-driven feature engineering, SMOTE oversampling, and under-sampling to create balanced, predictive variables (e.g., debt-to-income ratios, payment history).</li>
-</div>
-
-<div class="challenge-solution">
-    <em><li style="font-size: 18px;">Advanced Model Training & Evaluation:</li></em><br>
-    <li>Evaluated Logistic Regression, Random Forest, and XGBoost; selected <strong>XGBoost with Optuna hyperparameter tuning</strong>.</li>
-    <li>Achieved <strong>AUC 0.98, Gini 0.97, KS 86.87%</strong> via decile analysis and ROC validation.</li>
-</div>
-
-<div class="challenge-solution">
-    <strong style="font-size: 20px; color: #27ae60;">Optimized Risk Prediction & Deployment:</strong><br>
-    <em><li style="font-size: 18px;">Challenge:</strong> Black-box models lacking business interpretability.</li></em><br>
+<section id="experience" class="section">
+    <div class="section-header">
+        <h2>Experience</h2>
+        <span class="line"></span>
+        <p>CAREER HIGHLIGHTS</p>
+    </div>
     
-    <em><li><strong>Solution included:</strong></li></em><br>
-    <ol>
-        <li><strong>Real-time predictions</strong> with credit scores and ratings via Streamlit app</li>
-        <li><strong>SHAP explainability</strong> for top features (e.g., credit history, loan amount)</li>
-        <li><strong>Deployment pipeline</strong> with retraining safeguards for production stability</li>
-    </ol>
+    <div class="about-me-section" style="flex-direction: column;">
+        <!-- First Experience -->
+        <div class="details-item">
+            <h3>Python Developer, Invezza Technologies Pvt Ltd.</h3>
+            <p style="font-family: Allura; font-size: 20px; font-weight: bold;">Aug 2024 - Jul 2025</p>
+        
+            <div>
+                <p style="text-decoration: underline; font-weight: bold;">1. AI-Powered Marathon Racing Analytics System</p>
+                <p>At Invezza Technologies, I spearheaded the development of a real-time, computer vision-based system to automate the timing and ranking of participants in large-scale marathon events. The solution was designed to replace manual, error-prone processes with a highly accurate, scalable and automated pipeline.</p>
+        
+                <br><br>
+                <div style="color: #888;">
+                    <strong>Business Value Delivered</strong><br>
+                    • Eliminated Manual Effort: Reduced race result calculation time from hours to seconds, freeing up event staff for other critical tasks<br>
+                    • Enhanced Accuracy & Fairness: Minimized human error in bib reading and timing, ensuring results were accurate and disputes were drastically reduced<br>
+                    • Improved Participant Experience: Enabled the possibility of near-instant result publication and certificate generation, significantly boosting runner satisfaction<br>
+                    • Scalability: The automated system could easily scale from small local races to large city marathons with thousands of participants without a linear increase in cost or manpower<br>
+                </div>
+                
+        
+                <div class="more-text-exp-1" style="display:none; color: #888;">
+                    <br>
+                    Developed bib number recognition and ranking system for marathons using YOLOv8 and Roboflow, overcoming overlapping and tracking challenges.
+                    <br><br>
+        
+                    <strong>Roles and responsibilities</strong><br>
+                    As the Lead Developer for this project, I was responsible for the end-to-end implementation, from model selection and data pipeline creation to algorithm development for finish-line logic and ranking.
+                    <br><br>
+        
+                    <strong>Technical Implementation & Challenges Overcome:</strong><br>
+        
+                    <em><li>Bib Number Detection & Recognition:</li></em><br>
+                    <li>Model & Framework: Leveraged a fine-tuned YOLOv8 model, trained and deployed using Roboflow, for high-accuracy bib detection and OCR in diverse conditions (varying lighting, angles, and distances).</li>
+                    <li>Challenge: Bib Occlusion & Overlapping Runners.</li>
+                    <li>Solution: Implemented a tracking-by-detection pipeline using centroid + appearance features to maintain unique runner IDs.</li>
+                    <br><br>
+        
+                    <em><li>Finish Line Logic & Ranking Algorithm:</li></em><br>
+                    <li>Solution: Designed logic where a runner "finishes" the moment their torso centroid crosses a vertical finish line.</li>
+                    <li>Challenge: Tie Breaking.</li>
+                    <li>Solution: Sorted first by timestamp (ms), then by unique tracking ID.</li>
+                    <br><br>
+        
+                    <em>End-to-End Pipeline:</em><br>
+                    The system ingested a live video feed, performed real-time inference, tracked runners, recorded timestamps, and produced a live leaderboard.
+                    <br><br>
+        
+                    <p> </p>
+                    <p> </p>
+                    <p style="text-decoration: underline; font-weight: bold;">2. Apache Log Intelligence & Error Resolution System</p>
+                    <p>I developed an intelligent log analysis application to proactively monitor, diagnose, and resolve issues within Invezza's web infrastructure. This tool transformed raw, chaotic Apache log files into structured operational intelligence.</p>
+        
+                    <br><br>
+                    <strong>Business Value Delivered</strong><br>
+                    • Reduced MTTR from hours to minutes<br>
+                    • Improved System Reliability through proactive error detection<br>
+                    • Enhanced User Experience via quick error resolution<br>
+                    • Data-Driven Insights for traffic, security, and API usage<br>
+        
+                    <br>
+                    Developed bib number recognition and ranking system for marathons using YOLOv8 and Roboflow, overcoming overlapping and tracking challenges.
+                    <br><br>
+        
+                    <strong>Roles and responsibilities</strong><br>
+                    I designed and built the application from the ground up, focusing on log parsing, pattern recognition, error analysis and generating actionable insights.
+                    <br><br>
+        
+                    <strong>Technical Implementation & Challenges Overcome:</strong><br>
+        
+                    <em><li>Intelligent Log Parsing & Analysis:</li></em><br>
+                    <li>Challenge: Unstructured Data.</li>
+                    <li>Solution: Built a robust parser using Regex and Python to extract structured fields (IP, Timestamp, Status Code, URI, User-Agent, Error Message).</li>
+                    <br><br>
+        
+                    <em><li>Error Identification & Root Cause Analysis:</li></em><br>
+                    <li>System categorized logs by status codes (4xx, 5xx).</li>
+                    <li>Used frequency analysis to identify recurring issues.</li>
+                    <br><br>
+        
+                    <strong>Optimized Error Handling & Resolution:</strong><br>
+                    <em><li>Challenge: Reactive vs. Proactive Monitoring.</li></em><br>
+                    <br><br>
+        
+                    <em><li>Solution included:</li></em><br>
+                    <ol>Actionable Alerts with exact root context</ol>
+                    <ol>Traffic & Performance Insights</ol>
+                    <ol>Security Monitoring for suspicious access patterns</ol>
+                    <br><br>
+
+                    <p></p>
+                    <p></p>
+
+                    <p style="text-decoration: underline; font-weight: bold; font-size: 28px; margin-bottom: 20px;">3. Credit Risk Intelligence & Prediction System</p>
+
+                    <p style="font-size: 18px; color: #2c3e50; margin-bottom: 30px;">I developed an end-to-end credit risk assessment platform for Lauki Finance, transforming raw borrower data into actionable intelligence for default prediction, credit scoring, and risk rating. This ML-powered tool delivers real-time insights via a Streamlit interface, enabling precise lending decisions.</p>
+
+                    <div class="business-value">
+                        <strong style="font-size: 20px;">Business Value Delivered</strong><br><br>
+                        • <strong>Reduced default rates</strong> through proactive risk identification<br>
+                        • <strong>Improved Lending Accuracy</strong> with 98% AUC predictions<br>
+                        • <strong>Enhanced Regulatory Compliance</strong> via interpretable SHAP insights<br>
+                        • <strong>Data-Driven Decisions</strong> on borrower profiles, loan approvals, and portfolio management
+                    </div>
+
+                    <p style="font-size: 16px; margin: 20px 0;">
+                        <strong>Developed with XGBoost, Optuna tuning, and Streamlit deployment</strong> for scalable, interactive use. 
+                        <a href="https://credit-risk-modeling-lauki-finance.streamlit.app/" target="_blank">Live Demo</a> | 
+                        <a href="https://github.com/nafiul-araf/Credit-Risk-Modeling-End-to-End-Project" target="_blank">GitHub</a>
+                    </p>
+
+                    <br>
+
+                    <strong style="font-size: 18px;">Roles and Responsibilities</strong><br>
+                    <p style="margin: 15px 0;">
+                        I designed and built the full pipeline from data ingestion to deployment, focusing on feature engineering, model optimization, interpretability, and production-ready Streamlit app.
+                    </p>
+
+                    <br>
+
+                    <strong style="font-size: 20px; color: #2c3e50;">Technical Implementation & Challenges Overcome:</strong>
+
+                    <div class="challenge-solution">
+                        <em><li style="font-size: 18px;">Intelligent Data Processing & Feature Engineering:</li></em><br>
+                        <li><strong>Challenge:</strong> Imbalanced dataset (10% defaults) with unstructured features.</li>
+                        <li><strong>Solution:</strong> Applied domain-driven feature engineering, SMOTE oversampling, and under-sampling to create balanced, predictive variables (e.g., debt-to-income ratios, payment history).</li>
+                    </div>
+
+                    <div class="challenge-solution">
+                        <em><li style="font-size: 18px;">Advanced Model Training & Evaluation:</li></em><br>
+                        <li>Evaluated Logistic Regression, Random Forest, and XGBoost; selected <strong>XGBoost with Optuna hyperparameter tuning</strong>.</li>
+                        <li>Achieved <strong>AUC 0.98, Gini 0.97, KS 86.87%</strong> via decile analysis and ROC validation.</li>
+                    </div>
+
+                    <div class="challenge-solution">
+                        <strong style="font-size: 20px; color: #27ae60;">Optimized Risk Prediction & Deployment:</strong><br>
+                        <em><li style="font-size: 18px;">Challenge:</strong> Black-box models lacking business interpretability.</li></em><br>
+                        
+                        <em><li><strong>Solution included:</strong></li></em><br>
+                        <ol>
+                            <li><strong>Real-time predictions</strong> with credit scores and ratings via Streamlit app</li>
+                            <li><strong>SHAP explainability</strong> for top features (e.g., credit history, loan amount)</li>
+                            <li><strong>Deployment pipeline</strong> with retraining safeguards for production stability</li>
+                        </ol>
+                    </div>
+                    <br><br>
+                    <br><br>
+                </div>
+            </div>
+        
+            <button class="toggle-exp-1" type="button" style="
+                background-color: rgba(255, 255, 255, 0.3); 
+                backdrop-filter: blur(10px);
+                color: #888;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 25px;
+                font-size: 10px;
+                font-weight: 600;
+                cursor: pointer;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                width: auto;
+                height: auto;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;">
+                Read More
+            </button>
+        </div>
+
+        <!-- Second Experience -->
+        <div class="details-item">
+            <h3>AIML Developer, Inorbvict Healthcare Pvt. Ltd</h3>
+            <p style="font-family: Allura; font-size: 20px; font-weight: bold;">Aug 2025 - Nov 2025</p>
             
-                    </span>
-            
+            <div>
+                <p>
+                    At Inorbvict Healthcare, a medical equipment and devices provider, the goal was to modernize how inbound leads are handled across WhatsApp, email and the internal CRM so that every inquiry passes through a consistent, intelligent sales funnel.
+                    <br><br>
+                    <strong>Business Value Delivered</strong><br>
+                    • Annual cost savings: $13,500 in reduced manual labor<br>
+                    • Revenue impact: 28% increase in qualified lead conversion<br>
+                    • Scalability: Handles 500% more leads without additional staff<br>
+                    • Customer satisfaction: 4.8/5 rating on response quality and speed<br>
+                    • Team efficiency: Sales reps focus 80% more on closing vs. admin tasks<br>
                 </p>
-            
-                <button id="toggle-more" type="button" style="
+                
+                <div class="more-text-exp-2" style="display:none; color: #888;">
+                    <br>
+                    The solution was an AI-first CRM assistant that engages leads instantly, validates information, scores intent and guides sales toward closure.
+                    <br><br>
+                    <strong>Problem and goals</strong><br>
+                    Leads were coming from multiple platforms with inconsistent data quality and manual follow-ups.<br>
+                    Sales stages (inquiry, pricing, quotation, PI, closure) were not standardized or tracked intelligently.<br>
+                    The company needed faster response time, better qualification and higher conversion with minimal manual effort.<br>
+                    The objective: automate initial conversations, ensure data completeness and authenticity and give sales a "copilot" that recommends next-best-actions.
+                    <br><br>
+                    <strong>Technical solution</strong><br>
+                    <em>Channels and integration</em><br>
+                    Integrated Twilio WhatsApp Business API to automatically initiate conversations as soon as a new lead is created in the CRM.<br>
+                    Implemented an email integration layer to send auto-generated, personalized follow-up emails when WhatsApp engagement was low or when only an email was available.
+                    <br><br>
+                    <em>Agentic AI architecture</em><br>
+                    Built a multi-agent system mapped to five key stages: Inquiry Received, Price Shared, Quotation Sharing, Proforma Invoice and Victory (closure).<br>
+                    Used RAG (Retrieval-Augmented Generation) so each agent could answer product questions (brand, model, configurations, purchase plans, consignee details) from internal knowledge bases while keeping responses accurate and contextual.<br>
+                    Implemented agents for data capture and validation, product information verification and follow-up automation when users go inactive on WhatsApp or email.
+                    <br><br>
+                    <em>Intelligence and analytics</em><br>
+                    Computed sentiment scores and "genuineness" signals to prioritize leads and adapt tone.<br>
+                    Added negotiation-aware logic to recommend when to share prices, send quotations or push for proforma invoice.
+                    <br><br>
+                    <strong>Chanakya analytics tab</strong><br>
+                    Aggregates customer sentiment and genuineness scores, likely intent/objections and recommended next steps so sales gets a decision-support layer from conversational data.
+                    <br><br>
+                    <strong>Sarthi guidance tab</strong><br>
+                    Acts as a sales assistant that summarizes the current state of each lead, proposes the best next action and uses the agentic layer to simulate outcomes and choose a low-friction step forward.
+                </div>
+            </div>
+
+            <button class="toggle-exp-2" type="button" style="
                     background-color: rgba(255, 255, 255, 0.3); 
                     backdrop-filter: blur(10px);
                     color: #888;
@@ -1443,82 +1507,13 @@
                     width: auto;
                     height: auto;
                     text-transform: uppercase;
-                    letter-spacing: 0.5px;">
-                    Read More
-                </button>
-            
-            </div>
-
-
-
-            <div class="details-item">
-                <h3>AIML Developer, Inorbvict Healthcare Pvt. Ltd</h3>
-                <p style="font-family: Allura; font-size: 20px; font-weight: bold;">Aug 2025 - Nov 2025</p>
-                
-                <p>
-                    At Inorbvict Healthcare, a medical equipment and devices provider, the goal was to modernize how inbound leads are handled across WhatsApp, email and the internal CRM so that every inquiry passes through a consistent, intelligent sales funnel.
-                    <br><br>
-                    <strong>Business Value Delivered</strong><br>
-                    • Annual cost savings: $13,500 in reduced manual labor<br>
-                    • Revenue impact: 28% increase in qualified lead conversion<br>
-                    • Scalability: Handles 500% more leads without additional staff<br>
-                    • Customer satisfaction: 4.8/5 rating on response quality and speed<br>
-                    • Team efficiency: Sales reps focus 80% more on closing vs. admin tasks<br>
-                    
-                    <span id="more-text" style="display:none;">
-                        <br>
-                        The solution was an AI-first CRM assistant that engages leads instantly, validates information, scores intent and guides sales toward closure.
-                        <br><br>
-                        <strong>Problem and goals</strong><br>
-                        Leads were coming from multiple platforms with inconsistent data quality and manual follow-ups.<br>
-                        Sales stages (inquiry, pricing, quotation, PI, closure) were not standardized or tracked intelligently.<br>
-                        The company needed faster response time, better qualification and higher conversion with minimal manual effort.<br>
-                        The objective: automate initial conversations, ensure data completeness and authenticity and give sales a “copilot” that recommends next-best-actions.
-                        <br><br>
-                        <strong>Technical solution</strong><br>
-                        <em>Channels and integration</em><br>
-                        Integrated Twilio WhatsApp Business API to automatically initiate conversations as soon as a new lead is created in the CRM.<br>
-                        Implemented an email integration layer to send auto-generated, personalized follow-up emails when WhatsApp engagement was low or when only an email was available.
-                        <br><br>
-                        <em>Agentic AI architecture</em><br>
-                        Built a multi-agent system mapped to five key stages: Inquiry Received, Price Shared, Quotation Sharing, Proforma Invoice and Victory (closure).<br>
-                        Used RAG (Retrieval-Augmented Generation) so each agent could answer product questions (brand, model, configurations, purchase plans, consignee details) from internal knowledge bases while keeping responses accurate and contextual.<br>
-                        Implemented agents for data capture and validation, product information verification and follow-up automation when users go inactive on WhatsApp or email.
-                        <br><br>
-                        <em>Intelligence and analytics</em><br>
-                        Computed sentiment scores and “genuineness” signals to prioritize leads and adapt tone.<br>
-                        Added negotiation-aware logic to recommend when to share prices, send quotations or push for proforma invoice.
-                        <br><br>
-                        <strong>Chanakya analytics tab</strong><br>
-                        Aggregates customer sentiment and genuineness scores, likely intent/objections and recommended next steps so sales gets a decision-support layer from conversational data.
-                        <br><br>
-                        <strong>Sarthi guidance tab</strong><br>
-                        Acts as a sales assistant that summarizes the current state of each lead, proposes the best next action and uses the agentic layer to simulate outcomes and choose a low-friction step forward.
-                    </span>
-                </p>
-
-                <button id="toggle-more" type="button" style="
-                        background-color: rgba(255, 255, 255, 0.3); 
-                        backdrop-filter: blur(10px);
-                        color: #888;
-                        padding: 10px 20px;
-                        border: none;
-                        border-radius: 25px;
-                        font-size: 10px;
-                        font-weight: 600;
-                        cursor: pointer;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                        transition: all 0.3s ease;
-                        width: auto;
-                        height: auto;
-                        text-transform: uppercase;
-                        letter-spacing: 0.5px;
-                        ">
-                    Read More
-                </button>   
-            </div>
+                    letter-spacing: 0.5px;
+                    ">
+                Read More
+            </button>   
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="projects">
         <div class="section-header" style="max-width: 1600px; margin: 0 auto 60px; padding: 0 50px;">
